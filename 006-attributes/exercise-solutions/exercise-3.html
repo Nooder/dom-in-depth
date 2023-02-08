@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 3</title>
+  </head>
+  <body>
+    <h1>Welcome to the Attributes Exercises!</h1>
+    <script>
+      const h1 = document.querySelector("h1");
+
+      setInterval(() => {
+        if (h1.getAttribute("style") === "color: blue;") {
+          h1.setAttribute("style", "color: red;");
+        } else {
+          h1.setAttribute("style", "color: blue;");
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
