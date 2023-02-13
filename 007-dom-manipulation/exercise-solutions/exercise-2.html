@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 2</title>
+  </head>
+  <body>
+    <script>
+      // createParagraph("Hello", {id: 'one', class: 'big'})
+      function createParagraph(text, attributes = {}) {
+        const p = document.createElement("p");
+        p.textContent = text;
+
+        for (const [key, value] of Object.entries(attributes)) {
+          p.setAttribute(key, value);
+        }
+
+        return p;
+      }
+
+      const p1 = createParagraph("Paragraph 1");
+      const p2 = createParagraph("Paragraph 2", { id: "two" });
+      const p3 = createParagraph("Paragraph 3", { "data-hello": "meow" });
+
+      document.body.prepend(p1);
+      document.body.prepend(p2);
+      document.body.prepend(p3);
+    </script>
+  </body>
+</html>

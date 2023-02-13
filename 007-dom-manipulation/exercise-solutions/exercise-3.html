@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 3</title>
+  </head>
+  <body>
+    <script>
+      //    - A <p> tag with some text inside it
+      //    - A <div> with a <label> and <input> inside
+      //    - A <nav> containing a <ul> with 3
+      //      <li> elements inside, each with text
+
+      const p = document.createElement("p");
+      p.textContent = "Hello, I love monkeys! 🐵";
+
+      const div = document.createElement("div");
+      const label = document.createElement("label");
+      const input = document.createElement("input");
+      label.textContent = "Email:";
+      div.append(label);
+      div.append(input);
+
+      const nav = document.createElement("nav");
+      const ul = document.createElement("ul");
+      const li1 = document.createElement("li");
+      li1.textContent = "Home";
+      const li2 = document.createElement("li");
+      li2.textContent = "Blog";
+      const li3 = document.createElement("li");
+      li3.textContent = "About";
+      nav.append(ul);
+      ul.append(li1);
+      ul.append(li2);
+      ul.append(li3);
+
+      const elements = [p, div, nav];
+
+      setInterval(() => {
+        const random = Math.floor(Math.random() * elements.length);
+
+        // clear the out the body
+        for (const child of document.body.children) {
+          child.remove();
+        }
+
+        // add random element to the body
+        document.body.append(elements[random]);
+      }, 1000);
+    </script>
+  </body>
+</html>

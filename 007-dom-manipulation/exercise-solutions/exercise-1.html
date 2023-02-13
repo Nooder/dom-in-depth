@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 1</title>
+  </head>
+  <body>
+    <script>
+      //     <p id="intro">
+      //     Hello there, nice <strong>to meet</strong> you!
+      //    </p>
+      const p = document.createElement("p");
+      p.setAttribute("id", "intro");
+
+      const text1 = document.createTextNode("Hello there, nice ");
+      const strong = document.createElement("strong");
+      strong.textContent = "to meet";
+      const text2 = document.createTextNode(" you!");
+
+      p.append(text1);
+      p.append(strong);
+      p.append(text2);
+
+      document.body.append(p);
+    </script>
+  </body>
+</html>
