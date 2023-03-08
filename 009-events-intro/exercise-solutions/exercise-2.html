@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 2</title>
+  </head>
+  <body>
+    <button>Play!</button>
+    <p id="win" hidden>You're lucky!</p>
+    <p id="lose" hidden>Better luck next time!</p>
+
+    <script>
+      const button = document.querySelector("button");
+
+      const generateRandomNumber = () => {
+        const random = Math.floor(Math.random() * 11);
+        console.log(random);
+
+        if (random > 7) {
+          // win
+          const lucky = document.querySelector("#win");
+          lucky.removeAttribute("hidden");
+
+          const lose = document.querySelector("#lose");
+          lose.setAttribute("hidden", "");
+        } else {
+          // lose
+          const lose = document.querySelector("#lose");
+          lose.removeAttribute("hidden");
+
+          const lucky = document.querySelector("#win");
+          lucky.setAttribute("hidden", "");
+        }
+      };
+
+      button.onclick = generateRandomNumber;
+    </script>
+  </body>
+</html>

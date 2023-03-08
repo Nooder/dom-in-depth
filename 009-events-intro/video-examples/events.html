@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events</title>
+  </head>
+  <body>
+    <button
+      onclick="clickButton()"
+      onmouseenter="console.log('you have entered the button!')"
+    >
+      Click me!
+    </button>
+
+    <script>
+      function meow() {
+        console.log("meow!");
+      }
+
+      function hello() {
+        console.log("hello!");
+      }
+
+      function clickButton() {
+        meow();
+        hello();
+      }
+
+      function random() {
+        const rand = Math.random();
+        console.log(rand);
+      }
+
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", random);
+      btn.addEventListener("click", () => {
+        console.log("inline dynamic function event");
+      });
+    </script>
+  </body>
+</html>

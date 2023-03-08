@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bonus Exercise 1</title>
+  </head>
+  <body>
+    <button>Click me!</button>
+    <input type="text" />
+
+    <script>
+      const button = document.querySelector("button");
+      button.onclick = (event) => {
+        console.log("clicked");
+        console.log(event);
+      };
+
+      const input = document.querySelector("input");
+      input.oninput = (event) => {
+        console.log("input event");
+        console.log(event);
+      };
+    </script>
+  </body>
+</html>

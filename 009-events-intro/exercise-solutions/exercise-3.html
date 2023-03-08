@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 3</title>
+  </head>
+  <body>
+    <input type="text" />
+    <p></p>
+
+    <script>
+      const input = document.querySelector("input");
+      const p = document.querySelector("p");
+      p.style.color = "blue";
+
+      input.oninput = () => {
+        console.log(input.value);
+        p.textContent = input.value;
+      };
+    </script>
+  </body>
+</html>
