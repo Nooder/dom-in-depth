@@ -1,18 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Exercise 3</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification Example</title>
+    <style>
+      .notification {
+        position: fixed;
+        padding: 10px;
+        background-color: #f44336;
+        color: white;
+        border-radius: 4px;
+      }
+    </style>
   </head>
   <body>
+    <h2>Notification is on the right</h2>
+
     <script>
-      const div = document.createElement("div");
+      function showNotification({
+        top = 0,
+        right = 0,
+        className = "",
+        html = "",
+      }) {
+        // Create a div with the 'notification' class
+        const notification = document.createElement("div");
+        notification.className =
+          "notification" + (className ? " " + className : "");
 
-      div.style.margin = "auto";
-      div.style.height = "200px";
-      div.style.width = "200px";
-      div.style.backgroundColor = "salmon";
+        // Set the content of the notification
+        notification.innerHTML = html;
 
-      document.body.append(div);
+        // Set the position of the notification
+        notification.style.top = top + "px";
+        notification.style.right = right + "px";
+
+        // Function to toggle the visibility of the notification
+        function toggleVisibility() {
+          if (notification.style.display === "none") {
+            notification.style.display = "block";
+          } else {
+            notification.style.display = "none";
+          }
+        }
+
+        // Append the notification to the body
+        document.body.appendChild(notification);
+
+        // Set the interval to toggle the visibility every second (1000 ms)
+        setInterval(toggleVisibility, 1000);
+      }
+
+      // Example usage
+      showNotification({
+        top: 10,
+        right: 10,
+        html: "Hello!",
+        className: "welcome",
+      });
     </script>
   </body>
 </html>
