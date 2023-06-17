@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Delegation</title>
+  </head>
+  <body>
+    <ul>
+      <li>Home</li>
+      <li>Blog</li>
+      <li>About</li>
+    </ul>
+    <script>
+      const ul = document.querySelector("ul");
+      ul.addEventListener("click", function (e) {
+        console.log(e.composedPath());
+        console.log(e.target.textContent);
+      });
+    </script>
+  </body>
+</html>

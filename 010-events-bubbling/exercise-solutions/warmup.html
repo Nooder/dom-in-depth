@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Warmup</title>
+  </head>
+  <body>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Team</li>
+    </ul>
+    <script>
+      const lis = document.querySelectorAll("li");
+      lis.forEach((li) => {
+        li.addEventListener("click", (e) => {
+          console.log(e.target.textContent);
+          //   console.log(li.textContent);
+        });
+      });
+    </script>
+  </body>
+</html>

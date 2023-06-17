@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Exercise 2</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Price</td>
+          <td>Weight</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Phone</td>
+          <td>$400</td>
+          <td>500g</td>
+        </tr>
+        <tr>
+          <td>Tablet</td>
+          <td>$600</td>
+          <td>900g</td>
+        </tr>
+        <tr>
+          <td>Computer</td>
+          <td>$1600</td>
+          <td>1900g</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      const tbody = document.querySelector("tbody");
+      tbody.addEventListener("click", (e) => {
+        console.log(e.target.textContent);
+        console.log(e.eventPhase);
+      });
+
+      tbody.addEventListener(
+        "click",
+        (e) => {
+          console.log("CAPTURED!");
+          console.log(e.eventPhase);
+          console.log(e.target);
+          e.stopPropagation();
+        },
+        { capture: true }
+      );
+    </script>
+  </body>
+</html>

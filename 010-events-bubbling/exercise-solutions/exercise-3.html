@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Exercise 3</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" />
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        console.log("submitted!");
+        e.preventDefault();
+        const input = e.target.firstElementChild;
+        console.log(input.value);
+      });
+    </script>
+  </body>
+</html>
